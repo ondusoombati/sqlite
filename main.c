@@ -6,7 +6,7 @@
 
 typedef enum{
   META_COMMAND_SUCCESS,
-  META_COMMAND_UNRECOGNIED_COMMAND
+  META_COMMAND_UNRECOGNIZED_COMMAND
 }MetaCommandResult;
 
 typedef enum { 
@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
       switch (do_meta_command(input_buffer)) {
         case (META_COMMAND_SUCCESS):
           continue;
-        case (META_COMMAND_UNRECOGNIED_COMMAND):
+        case (META_COMMAND_UNRECOGNIZED_COMMAND):
           printf("Unrecognized command '%s'\n", input_buffer->buffer);
           continue;
       }
@@ -83,7 +83,7 @@ MetaCommandResult do_meta_command(InputBuffer* input_buffer) {
     close_input_buffer(input_buffer);
     exit(EXIT_SUCCESS);
   } else {
-    return META_COMMAND_UNRECOGNIED_COMMAND;
+    return META_COMMAND_UNRECOGNIZED_COMMAND;
   }
 }
 
